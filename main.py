@@ -1,17 +1,12 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
+from PyQt5.QtWidgets import QApplication
+from ui import SamplerWindow
 
-app = QApplication(sys.argv)
+def main():
+    app = QApplication(sys.argv)
+    window = SamplerWindow()
+    window.show()
+    sys.exit(app.exec_())
 
-window = QWidget()
-window.setWindowTitle("My Sampler App")
-
-button = QPushButton("파일 불러오기")
-
-layout = QVBoxLayout()
-layout.addWidget(button)
-
-window.setLayout(layout)
-window.show()
-
-sys.exit(app.exec_())
+if __name__ == "__main__":
+    main()
